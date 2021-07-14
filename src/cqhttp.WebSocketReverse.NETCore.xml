@@ -1,0 +1,2266 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>cqhttp.WebSocketReverse.NETCore</name>
+    </assembly>
+    <members>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Content.CqHttpContent.RetCode">
+            <summary>
+            操作结果返回码
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Content.CqHttpContent.Status">
+            <summary>
+            结果状态
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Content.CqHttpContent.SelfId">
+            <summary>
+            终端ID
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Content.CqHttpContent.Echo">
+            <summary>
+            操作编号
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Content.CqHttpContent.Data">
+            <summary>
+            操作结果
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.CqHttpApi.Timeout">
+            <summary>
+            回调超时限制
+            </summary>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.Replay(cqhttp.WebSocketReverse.NETCore.Model.Source,System.String,System.Boolean)">
+            <summary>
+            回复对方消息
+            </summary>
+            <param name="source"></param>
+            <param name="message">要发送的内容</param>
+            <param name="atSender">@发送者</param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.Ban(cqhttp.WebSocketReverse.NETCore.Model.Source)">
+            <summary>
+            禁言对方(预设30分钟)
+            </summary>
+            <param name="source"></param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.Kick(cqhttp.WebSocketReverse.NETCore.Model.Source)">
+            <summary>
+            踢对方
+            </summary>
+            <param name="source"></param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.Approve(cqhttp.WebSocketReverse.NETCore.Model.Source,System.String)">
+            <summary>
+            同意群组/好友请求
+            </summary>
+            <param name="source"></param>
+            <param name="remark">好友备注</param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.Disapprove(cqhttp.WebSocketReverse.NETCore.Model.Source,System.String)">
+            <summary>
+            拒绝群组/好友请求
+            </summary>
+            <param name="source"></param>
+            <param name="reson">拒绝理由</param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.Delete(cqhttp.WebSocketReverse.NETCore.Model.Source)">
+            <summary>
+            撤回对方消息
+            </summary>
+            <param name="source"></param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.SendMessage(cqhttp.WebSocketReverse.NETCore.Model.Source,System.String,System.Boolean)">
+            <summary>
+            发送消息
+            </summary>
+            <param name="source"></param>
+            <param name="message">要发送的内容</param>
+            <param name="autoEscape">消息内容是否作为纯文本发送（即不解析 CQ 码），</param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.SendPrivateMessage(cqhttp.WebSocketReverse.NETCore.Model.Source,System.String,System.Int64,System.Boolean)">
+            <summary>
+            发送私聊消息
+            </summary>
+            <param name="source"></param>
+            <param name="userId">对方 QQ 号</param>
+            <param name="message">要发送的内容</param>
+            <param name="auto_escape">消息内容是否作为纯文本发送（即不解析 CQ 码），</param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.SendGroupAnonymousMessage(cqhttp.WebSocketReverse.NETCore.Model.Source,System.String,System.Int64,System.Boolean)">
+            <summary>
+            发送群组匿名消息
+            </summary>
+            <param name="source"></param>
+            <param name="groupId">群号</param>
+            <param name="message">要发送的内容</param>
+            <param name="auto_escape">消息内容是否作为纯文本发送（即不解析 CQ 码），</param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.SendGroupMessage(cqhttp.WebSocketReverse.NETCore.Model.Source,System.String,System.Int64,System.Boolean)">
+            <summary>
+            发送群组消息
+            </summary>
+            <param name="source"></param>
+            <param name="groupId">群号</param>
+            <param name="message">要发送的内容</param>
+            <param name="auto_escape">消息内容是否作为纯文本发送（即不解析 CQ 码），</param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.SendDiscussMessage(cqhttp.WebSocketReverse.NETCore.Model.Source,System.String,System.Int64,System.Boolean)">
+            <summary>
+            发送讨论组消息
+            </summary>
+            <param name="source"></param>
+            <param name="discussId">讨论组 ID（正常情况下看不到，需要从讨论组消息上报的数据中获得）</param>
+            <param name="message">要发送的内容</param>
+            <param name="auto_escape">消息内容是否作为纯文本发送（即不解析 CQ 码），</param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.DeleteMessage(cqhttp.WebSocketReverse.NETCore.Model.Source,System.Int32)">
+            <summary>
+            撤回消息
+            </summary>
+            <param name="source"></param>
+            <param name="messageId">消息 ID</param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.SendLike(cqhttp.WebSocketReverse.NETCore.Model.Source,System.Nullable{System.Int64},System.Byte)">
+            <summary>
+            发送好友赞
+            </summary>
+            <param name="source"></param>
+            <param name="userId">对方 QQ 号</param>
+            <param name="times">赞的次数，每个好友每天最多 10 次</param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.SetGroupKick(cqhttp.WebSocketReverse.NETCore.Model.Source,System.Nullable{System.Int64},System.Nullable{System.Int64},System.Boolean)">
+            <summary>
+            群组踢人
+            </summary>
+            <param name="source"></param>
+            <param name="groupId">群号</param>
+            <param name="userId">要踢的 QQ 号</param>
+            <param name="rejectAddRequest">拒绝此人的加群请求</param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.SetGroupBan(cqhttp.WebSocketReverse.NETCore.Model.Source,System.Nullable{System.Int64},System.Int32)">
+            <summary>
+            群组单人禁言
+            </summary>
+            <param name="source"></param>
+            <param name="groupId">群号</param>
+            <param name="duration">禁言时长，单位秒，0 表示取消禁言</param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.SetGroupAnonymousBan(cqhttp.WebSocketReverse.NETCore.Model.Source,System.String,System.Nullable{System.Int64},System.Int32)">
+            <summary>
+            群组匿名用户禁言
+            </summary>
+            <param name="source"></param>
+            <param name="groupId">群号</param>
+            <param name="flag">要禁言的匿名用户的 flag（需从群消息上报的数据中获得）</param>
+            <param name="duration">禁言时长，单位秒，0 表示取消禁言</param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.SetGroupWholeBan(cqhttp.WebSocketReverse.NETCore.Model.Source,System.Nullable{System.Int64},System.Boolean)">
+            <summary>
+            群组全员禁言
+            </summary>
+            <param name="source"></param>
+            <param name="groupId">群号</param>
+            <param name="enable">是否禁言</param>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.SetGroupAdmin(cqhttp.WebSocketReverse.NETCore.Model.Source,System.Nullable{System.Int64},System.Nullable{System.Int64},System.Boolean)">
+            <summary>
+            群组设置管理员
+            </summary>
+            <param name="source"></param>
+            <param name="groupId">群号</param>
+            <param name="userId">要设置管理员的 QQ 号</param>
+            <param name="enable">true 为设置，false 为取消</param>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.SetGroupAnonymous(cqhttp.WebSocketReverse.NETCore.Model.Source,System.Nullable{System.Int64},System.Boolean)">
+            <summary>
+            群组匿名
+            </summary>
+            <param name="source"></param>
+            <param name="groupId">群号</param>
+            <param name="enable">是否允许匿名聊天</param>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.SetGroupAnonymous(cqhttp.WebSocketReverse.NETCore.Model.Source,System.String,System.Nullable{System.Int64},System.Nullable{System.Int64})">
+            <summary>
+            设置群名片（群备注）
+            </summary>
+            <param name="source"></param>
+            <param name="groupId">群号</param>
+            <param name="userId">要设置的 QQ 号</param>
+            <param name="card">群名片内容，不填或空字符串表示删除群名片</param>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.SetGroupLeave(cqhttp.WebSocketReverse.NETCore.Model.Source,System.Nullable{System.Int64},System.Boolean)">
+            <summary>
+            退出群组
+            </summary>
+            <param name="source"></param>
+            <param name="groupId">群号</param>
+            <param name="isDismiss">是否解散，如果登录号是群主，则仅在此项为 true 时能够解散</param>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.SetGroupLeave(cqhttp.WebSocketReverse.NETCore.Model.Source,System.Int64,System.Int64,System.String,System.Int32)">
+            <summary>
+            设置群组专属头衔
+            </summary>
+            <param name="source"></param>
+            <param name="groupId">群号</param>
+            <param name="userId">要设置的 QQ 号</param>
+            <param name="specialTitle">专属头衔，不填或空字符串表示删除专属头衔</param>
+            <param name="duration">专属头衔有效期，单位秒，-1 表示永久，不过此项似乎没有效果，可能是只有某些特殊的时间长度有效，有待测试</param>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.SetGroupLeave(cqhttp.WebSocketReverse.NETCore.Model.Source,System.Nullable{System.Int64})">
+            <summary>
+            退出讨论组
+            </summary>
+            <param name="source"></param>
+            <param name="discussId">讨论组 ID（正常情况下看不到，需要从讨论组消息上报的数据中获得）</param>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.SetGroupLeave(cqhttp.WebSocketReverse.NETCore.Model.Source,System.String,System.Boolean,System.String)">
+            <summary>
+            处理加好友请求
+            </summary>
+            <param name="source"></param>
+            <param name="flag">加好友请求的 flag（需从上报的数据中获得）</param>
+            <param name="approve">是否同意请求</param>
+            <param name="remark">添加后的好友备注（仅在同意时有效）</param>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.SetGroupLeave(cqhttp.WebSocketReverse.NETCore.Model.Source,System.String,cqhttp.WebSocketReverse.NETCore.Model.GroupRequestType,System.Boolean,System.String)">
+            <summary>
+            处理加群请求／邀请
+            </summary>
+            <param name="source"></param>
+            <param name="flag">加群请求的 flag（需从上报的数据中获得）</param>
+            <param name="type">请求类型</param>
+            <param name="approve">是否同意请求</param>
+            <param name="reason">拒绝理由（仅在拒绝时有效）</param>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.GetLoginInfo(cqhttp.WebSocketReverse.NETCore.Model.Source)">
+            <summary>
+            获取登录号信息
+            </summary>
+            <param name="source"></param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.GetStrangerInfo(cqhttp.WebSocketReverse.NETCore.Model.Source,System.Nullable{System.Int64},System.Boolean)">
+            <summary>
+            获取陌生人信息
+            </summary>
+            <param name="source"></param>
+            <param name="userId">QQ 号</param>
+            <param name="noCache">是否不使用缓存（使用缓存可能更新不及时，但响应更快）</param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.GetGroupList(cqhttp.WebSocketReverse.NETCore.Model.Source)">
+            <summary>
+            获取群列表
+            </summary>
+            <param name="source"></param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.GetGroupMemberInfo(cqhttp.WebSocketReverse.NETCore.Model.Source,System.Nullable{System.Int64},System.Nullable{System.Int64},System.Boolean)">
+            <summary>
+            获取群成员信息
+            </summary>
+            <param name="source"></param>
+            <param name="groupId">群号</param>
+            <param name="userId">QQ号</param>
+            <param name="noCache">是否不使用缓存（使用缓存可能更新不及时，但响应更快）</param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.GetGroupMemberList(cqhttp.WebSocketReverse.NETCore.Model.Source,System.Nullable{System.Int64})">
+            <summary>
+            获取群成员列表
+            </summary>
+            <param name="source"></param>
+            <param name="groupId">群号</param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.GetCookies(cqhttp.WebSocketReverse.NETCore.Model.Source,System.String)">
+            <summary>
+            获取 Cookies
+            </summary>
+            <param name="source"></param>
+            <param name="domain">需要获取 cookies 的域名</param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.GetCsrfToken(cqhttp.WebSocketReverse.NETCore.Model.Source)">
+            <summary>
+            获取 CSRF Token
+            </summary>
+            <param name="source"></param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.GetCredentials(cqhttp.WebSocketReverse.NETCore.Model.Source)">
+            <summary>
+            获取 QQ 相关接口凭证
+            </summary>
+            <param name="source"></param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.GetRecord(cqhttp.WebSocketReverse.NETCore.Model.Source,System.String,System.String,System.Boolean)">
+            <summary>
+            获取语音
+            <para>其实并不是真的获取语音，而是转换语音到指定的格式，然后返回语音文件名（data\record 目录下）。</para>
+            <para>注意，要使用此接口，需要安装 酷Q 的 <see href="https://cqp.cc/t/21132">语音组件</see>。</para>
+            </summary>
+            <param name="source"></param>
+            <param name="file">收到的语音文件名</param>
+            <param name="outFormat">要转换到的格式，目前支持 mp3、amr、wma、m4a、spx、ogg、wav、flac</param>
+            <param name="fullPath">是否返回文件的绝对路径（Windows 环境下建议使用，Docker 中不建议）</param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.GetRecord(cqhttp.WebSocketReverse.NETCore.Model.Source,System.String)">
+            <summary>
+            获取图片
+            </summary>
+            <param name="source"></param>
+            <param name="file">收到的语音文件名</param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.CanSendImage(cqhttp.WebSocketReverse.NETCore.Model.Source)">
+            <summary>
+            检查是否可以发送图片
+            </summary>
+            <param name="source"></param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.CanSendRecord(cqhttp.WebSocketReverse.NETCore.Model.Source)">
+            <summary>
+            检查是否可以发送语音
+            </summary>
+            <param name="source"></param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.GetStatus(cqhttp.WebSocketReverse.NETCore.Model.Source)">
+            <summary>
+            获取插件运行状态
+            </summary>
+            <param name="source"></param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.GetVersionInfo(cqhttp.WebSocketReverse.NETCore.Model.Source)">
+            <summary>
+            获取酷 Q 及 HTTP API 插件的版本信息
+            </summary>
+            <param name="source"></param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.SetRestart(cqhttp.WebSocketReverse.NETCore.Model.Source,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            重启酷 Q，并以当前登录号自动登录（需勾选快速登录）
+            </summary>
+            <param name="source"></param>
+            <param name="cleanLog">是否在重启时清空酷 Q 的日志数据库（logv1.db）</param>
+            <param name="cleanCache">是否在重启时清空酷 Q 的缓存数据库（cache.db）</param>
+            <param name="cleanEvent">是否在重启时清空酷 Q 的事件数据库（eventv2.db）</param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.SetRestartPlugin(cqhttp.WebSocketReverse.NETCore.Model.Source,System.Int32)">
+            <summary>
+            重启 HTTP API 插件
+            </summary>
+            <param name="source"></param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.CleanDataDir(cqhttp.WebSocketReverse.NETCore.Model.Source,System.String)">
+            <summary>
+            清理数据目录
+            用于清理积攒了太多旧文件的数据目录，如 image。
+            </summary>
+            <param name="source"></param>
+            <param name="data_dir">收到清理的目录名，支持 image、record、show、bface</param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.CleanPluginLog(cqhttp.WebSocketReverse.NETCore.Model.Source)">
+            <summary>
+            用于清空插件的日志文件。
+            </summary>
+            <param name="source"></param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.GetFriendList(cqhttp.WebSocketReverse.NETCore.Model.Source,System.Boolean)">
+            <summary>
+            获取好友列表
+            </summary>
+            <param name="source"></param>
+            <param name="flat">是否获取扁平化的好友数据，即所有好友放在一起、所有分组放在一起，而不是按分组层级</param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.GetGroupInfo(cqhttp.WebSocketReverse.NETCore.Model.Source,System.Nullable{System.Int64})">
+            <summary>
+            获取群信息
+            </summary>
+            <param name="source"></param>
+            <param name="groupId">要查询的群号</param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.GetVipInfo(cqhttp.WebSocketReverse.NETCore.Model.Source,System.Nullable{System.Int64})">
+            <summary>
+            获取会员信息
+            </summary>
+            <param name="source"></param>
+            <param name="userId">要查询的 QQ 号</param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.CheckUpdate(cqhttp.WebSocketReverse.NETCore.Model.Source,System.Boolean)">
+            <summary>
+            检查更新
+            </summary>
+            <param name="source"></param>
+            <param name="automatic">是否自动进行，如果为 true，将不会弹窗提示，而仅仅输出日志，同时如果 auto_perform_update 为 true，则会自动更新并重启酷 Q</param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.HandleQuickOperation(cqhttp.WebSocketReverse.NETCore.Model.Source,System.String,cqhttp.WebSocketReverse.NETCore.Model.QuickOperation)">
+            <summary>
+            对事件执行快速操作
+            </summary>
+            <param name="source"></param>
+            <param name="remark"></param>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.SendMessage(cqhttp.WebSocketReverse.NETCore.Model.Source,cqhttp.WebSocketReverse.NETCore.Model.CqHttpRequest)">
+            <summary>
+            发送原始请求消息
+            </summary>
+            <param name="source"></param>
+            <param name="message"></param>
+            <param name="timeout"></param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpApi.SendRequestMessage(cqhttp.WebSocketReverse.NETCore.Model.Source,cqhttp.WebSocketReverse.NETCore.Model.CqHttpRequest)">
+            <summary>
+            发送请求消息
+            </summary>
+            <param name="source"></param>
+            <param name="message"></param>
+            <param name="timeout"></param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpMessage.WithImage(System.String,System.Boolean,System.Int32)">
+            <summary>
+            发送图片
+            </summary>
+            <param name="filePath">酷Q data\image 相对目錄下的文件 或网络链接 file://http[s] 或本地文件系统链接 file=file:/// 或base64编码 file=base64://</param>
+            <param name="cache">使用缓存</param>
+            <param name="timeout">设置下载操作超时</param>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpMessage.WithLocalImage(System.String,System.Boolean,System.Int32)">
+            <summary>
+            发送本地图片
+            </summary>
+            <param name="Path">本地文件路徑</param>
+            <param name="cache">使用缓存</param>
+            <param name="timeout">设置下载操作超时</param>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpMessage.WithImageUrl(System.String,System.Boolean,System.Int32)">
+            <summary>
+            发送网络图片
+            </summary>
+            <param name="url">网络链接</param>
+            <param name="cache">使用缓存</param>
+            <param name="timeout">设置下载操作超时</param>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpMessage.WithBase64Image(System.String,System.Boolean,System.Int32)">
+            <summary>
+            发送Base64图片
+            </summary>
+            <param name="base64">base64编码</param>
+            <param name="cache">使用缓存</param>
+            <param name="timeout">设置下载操作超时</param>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpMessage.Record(System.String,System.Boolean,System.Int32)">
+            <summary>
+            发送语音
+            </summary>
+            <param name="filePath">酷Q data\record 相对目錄下的文件 或网络链接 file://http[s] 或本地文件系统链接 file=file:/// 或base64编码 file=base64://</param>
+            <param name="cache">使用缓存</param>
+            <param name="timeout">设置下载操作超时</param>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpMessage.LocalRecord(System.String,System.Boolean,System.Int32)">
+            <summary>
+            发送本地语音
+            </summary>
+            <param name="Path">本地文件路徑</param>
+            <param name="cache">使用缓存</param>
+            <param name="timeout">设置下载操作超时</param>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpMessage.RecodUrl(System.String,System.Boolean,System.Int32)">
+            <summary>
+            发送网络语音
+            </summary>
+            <param name="url">网络链接</param>
+            <param name="cache">使用缓存</param>
+            <param name="timeout">设置下载操作超时</param>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpMessage.Base64Record(System.String,System.Boolean,System.Int32)">
+            <summary>
+            发送Base64语音
+            </summary>
+            <param name="base64">base64编码</param>
+            <param name="cache">使用缓存</param>
+            <param name="timeout">设置下载操作超时</param>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpMessage.WithFace(System.Int32)">
+            <summary>
+            发送系统表情
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpMessage.WithEmojiId(System.String)">
+            <summary>
+            发送emoji表情
+            </summary>
+            <param name="emoji">emoji</param>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpMessage.WithText(System.String)">
+            <summary>
+            发送文字
+            </summary>
+            <param name="emoji">emoji</param>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpMessage.WithBface(System.Int32)">
+            <summary>
+            发送原创表情
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpMessage.WithSface(System.Int32)">
+            <summary>
+            发送小表情
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpMessage.WithAt(System.Int64)">
+            <summary>
+            发送 @
+            </summary>
+            <param name="userId">QQ 号</param>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpMessage.WithAtAll">
+            <summary>
+            发送 @
+            </summary>
+            <param name="userId">QQ 号</param>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpMessage.WithAt(System.Int32)">
+            <summary>
+            发送猜拳魔法表情
+            </summary>
+            <param name="typeId">
+            1 - 猜拳结果为石头
+            2 - 猜拳结果为剪刀
+            3 - 猜拳结果为布</param>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpMessage.Dice">
+            <summary>
+            掷骰子魔法表情
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpMessage.Shake">
+            <summary>
+            戳一戳
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpMessage.Location(System.Double,System.Double,System.String,System.String)">
+            <summary>
+            地点
+            </summary>
+            <param name="lat">纬度</param>
+            <param name="lon">经度</param>
+            <param name="title">分享地点的名称</param>
+            <param name="content">分享地点的具体地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpMessage.Music(System.String,System.Int32,System.Int32)">
+            <summary>
+            音乐
+            </summary>
+            <param name="type">音乐平台类型，目前支持qq、163</param>
+            <param name="songId">对应音乐平台的数字音乐id</param>
+            <param name="styleId">音乐卡片的风格。</param>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpMessage.MusicCard(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            音乐自定义分享
+            </summary>
+            <param name="url">分享链接，即点击分享后进入的音乐页面（如歌曲介绍页）。</param>
+            <param name="audio">音频链接（如mp3链接）。</param>
+            <param name="title">音乐的标题，建议12字以内。</param>
+            <param name="content">音乐的简介，建议30字以内。该参数可被忽略。</param>
+            <param name="image">音乐的封面图片链接。若参数为空或被忽略，则显示默认图片。</param>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpMessage.UrlShare(System.String,System.String,System.String,System.String)">
+            <summary>
+            链接分享
+            </summary>
+            <param name="url">分享链接。</param>
+            <param name="title">分享的标题，建议12字以内。</param>
+            <param name="content">分享的简介，建议30字以内。该参数可被忽略。</param>
+            <param name="image">分享的图片链接。若参数为空或被忽略，则显示默认图片。</param>
+            <returns></returns>
+        </member>
+        <member name="E:cqhttp.WebSocketReverse.NETCore.CqHttpParse.OnConnectedAsync">
+            <summary>
+            连接事件
+            </summary>
+        </member>
+        <member name="E:cqhttp.WebSocketReverse.NETCore.CqHttpParse.OnPrivateMessageAsync">
+            <summary>
+            私聊事件
+            </summary>
+        </member>
+        <member name="E:cqhttp.WebSocketReverse.NETCore.CqHttpParse.OnGroupMessageAsync">
+            <summary>
+            群聊事件
+            </summary>
+        </member>
+        <member name="E:cqhttp.WebSocketReverse.NETCore.CqHttpParse.OnDiscussMessageAsync">
+            <summary>
+            讨论组事件
+            </summary>
+        </member>
+        <member name="E:cqhttp.WebSocketReverse.NETCore.CqHttpParse.OnMessageAsync">
+            <summary>
+            消息接收事件
+            </summary>
+        </member>
+        <member name="E:cqhttp.WebSocketReverse.NETCore.CqHttpParse.OnGroupNoticAsync">
+            <summary>
+            群通知事件
+            </summary>
+        </member>
+        <member name="E:cqhttp.WebSocketReverse.NETCore.CqHttpParse.OnFriendAddAsync">
+            <summary>
+            好友添加事件
+            </summary>
+        </member>
+        <member name="E:cqhttp.WebSocketReverse.NETCore.CqHttpParse.OnFriendRequestAsync">
+            <summary>
+            好友请求事件
+            </summary>
+        </member>
+        <member name="E:cqhttp.WebSocketReverse.NETCore.CqHttpParse.OnGroupRequestAsync">
+            <summary>
+            群组请求事件
+            </summary>
+        </member>
+        <member name="E:cqhttp.WebSocketReverse.NETCore.CqHttpParse.OnStatusAsync">
+            <summary>
+            状态变更事件
+            </summary>
+        </member>
+        <member name="E:cqhttp.WebSocketReverse.NETCore.CqHttpParse.OnResponseAsync">
+            <summary>
+            回调消息事件
+            </summary>
+        </member>
+        <member name="E:cqhttp.WebSocketReverse.NETCore.CqHttpParse.OnErrorResponseAsync">
+            <summary>
+            消息处理失败事件
+            </summary>
+        </member>
+        <member name="E:cqhttp.WebSocketReverse.NETCore.CqHttpParse.OnErrorParseAsync">
+            <summary>
+            解析失败事件
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.CqHttpParse.SetResult">
+            <summary>
+            回调结果接口
+            </summary>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpParse.#ctor(System.Action{System.String,cqhttp.WebSocketReverse.NETCore.Resource.ResponseResource})">
+            <summary>
+            CQHTTP消息解析
+            </summary>
+            <param name="setResult">回调存放点</param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpParse.Parse(System.Object,cqhttp.WebSocketReverse.NETCore.MessageEventArgs)">
+            <summary>
+            解析消息,事件分发
+            </summary>
+            <param name="selfId">消息来源</param>
+            <param name="pack">消息封装</param>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpParse.ParseResponse(cqhttp.WebSocketReverse.NETCore.Model.Source,System.Text.Json.JsonElement)">
+            <summary>
+            解析回调状态
+            </summary>
+            <param name="source"></param>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpParse.ResponseParse(cqhttp.WebSocketReverse.NETCore.Model.Source,System.String,System.Text.Json.JsonElement,cqhttp.WebSocketReverse.NETCore.Resource.ResponseResource)">
+            <summary>
+            解析回调消息
+            </summary>
+            <param name="source"></param>
+            <param name="echo"></param>
+            <param name="jData"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpParse.StatusEvent(System.Text.Json.JsonElement,cqhttp.WebSocketReverse.NETCore.Model.Source)">
+            <summary>
+            状态事件
+            </summary>
+            <param name="element"></param>
+            <param name="source"></param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpParse.RequestEvent(System.Text.Json.JsonElement,cqhttp.WebSocketReverse.NETCore.Model.Source)">
+            <summary>
+            请求事件
+            </summary>
+            <param name="element"></param>
+            <param name="source"></param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpParse.NoticEvent(System.Text.Json.JsonElement,cqhttp.WebSocketReverse.NETCore.Model.Source)">
+            <summary>
+            通知事件
+            </summary>
+            <param name="element"></param>
+            <param name="source"></param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpParse.MessageEvent(System.Text.Json.JsonElement,cqhttp.WebSocketReverse.NETCore.Model.Source)">
+            <summary>
+            消息事件
+            </summary>
+            <param name="element"></param>
+            <param name="source"></param>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.CqHttpParse.MetaEvent(System.Text.Json.JsonElement,cqhttp.WebSocketReverse.NETCore.Model.Source)">
+            <summary>
+            元事件
+            </summary>
+            <param name="element"></param>
+            <param name="source"></param>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.MessageFlags.Private">
+            <summary>
+            私聊消息
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.MessageFlags.Group">
+            <summary>
+            群消息
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.MessageFlags.Discuss">
+            <summary>
+            讨论组消息
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.MessageFlags.Friend">
+            <summary>
+            好友消息
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.MessageFlags.Anonymous">
+            <summary>
+            匿名消息
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.MessageFlags.Notice">
+            <summary>
+            群公告消息
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.SendMsg">
+            <summary>
+            发送消息
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.DeleteMsg">
+            <summary>
+            撤回消息
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.SendLike">
+            <summary>
+            发送好友赞
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.SetGroupKick">
+            <summary>
+            群组踢人
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.SetGroupBan">
+            <summary>
+            群组单人禁言
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.SetGroupAnonymousBan">
+            <summary>
+            群组匿名用户禁言
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.SetGroupWholeBan">
+            <summary>
+            群组全员禁言
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.SetGroupAdmin">
+            <summary>
+            群组设置管理员
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.SetGroupAnonymous">
+            <summary>
+            群组匿名
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.SetGroupCard">
+            <summary>
+            设置群名片（群备注）
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.SetGroupLeave">
+            <summary>
+            退出群组
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.SetGroupSpecialTitle">
+            <summary>
+            设置群组专属头衔
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.SetDiscussLeave">
+            <summary>
+            退出讨论组
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.SetFriendAddRequest">
+            <summary>
+            处理加好友请求
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.SetGroupAddRequest">
+            <summary>
+            处理加群请求／邀请
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.GetLoginInfo">
+            <summary>
+            获取登录号信息
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.GetStrangerInfo">
+            <summary>
+            获取陌生人信息
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.GetGroupList">
+            <summary>
+            获取陌生人信息
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.GetGroupMemberInfo">
+            <summary>
+            获取陌生人信息
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.GetGroupMemberList">
+            <summary>
+            获取陌生人信息
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.GetCookies">
+            <summary>
+            获取 Cookies
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.GetCsrfToken">
+            <summary>
+            获取 CSRF Token
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.GetCredentials">
+            <summary>
+            获取 QQ 相关接口凭证
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.GetRecord">
+            <summary>
+            获取语音
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.GetImage">
+            <summary>
+            获取图片
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.CanSendImage">
+            <summary>
+            检查是否可以发送图片
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.CanSendRecord">
+            <summary>
+            检查是否可以发送语音
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.GetStatus">
+            <summary>
+            获取插件运行状态
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.GetVersionInfo">
+            <summary>
+            获取酷 Q 及 HTTP API 插件的版本信息
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.SetRestart">
+            <summary>
+            重启酷 Q，并以当前登录号自动登录（需勾选快速登录）
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.SetRestartPlugin">
+            <summary>
+            重启 HTTP API 插件
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.CleanDataDir">
+            <summary>
+            清理数据目录
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.CleanPluginLog">
+            <summary>
+            清理插件日志
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.GetFriendList">
+            <summary>
+            获取好友列表
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.GetGroupInfo">
+            <summary>
+            获取群信息
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Enumeration.RequestType.GetVipInfo">
+            <summary>
+            清理数据目录
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Model.Event.ConnectEventArgs">
+            <summary>
+            元事件 - 连接
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Event.CqHttpBaseEventArgs.Source">
+            <summary>
+            來源
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Event.CqHttpMessageEventArgs.MessageId">
+            <summary>
+            消息ID
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Event.CqHttpMessageEventArgs.UserId">
+            <summary>
+            QQ 号
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Event.CqHttpMessageEventArgs.TargetId">
+            <summary>
+            <para>目标ID</para>
+            <para>指在讨论组事件代表讨论组ID</para>
+            <para>而在其他事件之下则代表群号</para>
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Event.CqHttpMessageEventArgs.GroupId">
+            <summary>
+            <para>群号</para>
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Event.CqHttpMessageEventArgs.DiscussId">
+            <summary>
+            <para>讨论组 ID</para>
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Event.CqHttpMessageEventArgs.FontId">
+            <summary>
+            字体
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Event.CqHttpMessageEventArgs.Message">
+            <summary>
+            消息
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Event.CqHttpMessageEventArgs.RawMessage">
+            <summary>
+            原消息
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Event.CqHttpMessageEventArgs.Sender">
+            <summary>
+            发送者
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Event.CqHttpMessageEventArgs.Anonymous">
+            <summary>
+            匿名数据
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Event.CqHttpMessageEventArgs.Flags">
+            <summary>
+            消息识别分类
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Model.Event.ResponseEventArgs">
+            <summary>
+            元事件 - 回调
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Model.Event.StatusEventArgs">
+            <summary>
+            元事件 - 状态信息
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.CqHttpSender.UserId">
+            <summary>
+            QQ号
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.CqHttpSender.NickName">
+            <summary>
+            QQ 昵称
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.CqHttpSender.Card">
+            <summary>
+            群名片／备注
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.CqHttpSender.Title">
+            <summary>
+            专属头衔
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.CqHttpSender.Age">
+            <summary>
+            年龄
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.CqHttpSender.Area">
+            <summary>
+            地区
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.CqHttpSender.Level">
+            <summary>
+            成员等级
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.CqHttpSender.Sex">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.CqHttpSender.Role">
+            <summary>
+            角色
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Model.File">
+            <summary>
+            群文件
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.File.Id">
+            <summary>
+            文件 ID
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.File.Name">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.File.Size">
+            <summary>
+            文件大小（字节数）
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.File.Busid">
+            <summary>
+            busid（目前不清楚有什么作用）
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Model.GroupNotic.Upload">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Model.GroupNotic.Increase">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Model.GroupNotic.Decrease">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Model.GroupNotic.Admin">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Model.GroupNotic.Ban">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Model.GroupNotic.Set">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Model.GroupNotic.UnSet">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Model.GroupNotic.Leave">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Model.GroupNotic.Kick">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Model.GroupNotic.KickMe">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Model.GroupNotic.Approve">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Model.GroupNotic.Invite">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Model.GroupNotic.Lift_Ban">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Model.GroupRequestType.Add">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Model.GroupRequestType.Invite">
+            <summary>
+            邀请
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Model.GroupRole.Member">
+            <summary>
+            成员
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Model.GroupRole.Admin">
+            <summary>
+            管理员
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Model.GroupRole.Owner">
+            <summary>
+            群主
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Model.InGroupSex.Female">
+            <summary>
+            女
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Model.InGroupSex.Male">
+            <summary>
+            男
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Model.InGroupSex.Unknown">
+            <summary>
+            不明
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Model.Params.CheckUpdateParams">
+            <summary>
+            检查更新
+            此接口 status 会返回 async，检查更新操作将会在线程池执行。
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.CheckUpdateParams.Automatic">
+            <summary>
+            是否自动进行，如果为 true，将不会弹窗提示，而仅仅输出日志，同时如果 auto_perform_update 为 true，则会自动更新（需要手动重启 酷Q）
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Model.Params.CleanDataDirParams">
+            <summary>
+            清理数据目录
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.CleanDataDirParams.DataDir">
+            <summary>
+            收到清理的目录名，支持 image、record、show、bface
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Model.Params.GetCookiesParams">
+            <summary>
+            获取 Cookies
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.GetCookiesParams.Domain">
+            <summary>
+            需要获取 cookies 的域名
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Model.Params.GetCredentialsParams">
+            <summary>
+            获取 QQ 相关接口凭证
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.GetCredentialsParams.Domain">
+            <summary>
+            需要获取 cookies 的域名
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.GetCredentialsParams.Token">
+            <summary>
+            CSRF Token
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Model.Params.GetCsrfTokenParams">
+            <summary>
+            获取 CSRF Token
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.GetCsrfTokenParams.Token">
+            <summary>
+            CSRF Token
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Model.Params.GetFriendListParams">
+            <summary>
+            获取好友列表
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.GetFriendListParams.Flat">
+            <summary>
+            是否获取扁平化的好友数据，即所有好友放在一起、所有分组放在一起，而不是按分组层级
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Model.Params.GetGroupInfoParams">
+            <summary>
+            获取群信息
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.GetGroupInfoParams.GroupId">
+            <summary>
+            群号
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.GetGroupInfoParams.NoCache">
+            <summary>
+            是否不使用缓存（使用缓存可能更新不及时，但响应更快）
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Model.Params.GetGroupMemberInfoParams">
+            <summary>
+            获取群成员信息
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.GetGroupMemberInfoParams.GroupId">
+            <summary>
+            群号
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.GetGroupMemberInfoParams.UserId">
+            <summary>
+            QQ 号
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.GetGroupMemberInfoParams.NoCache">
+            <summary>
+            是否不使用缓存（使用缓存可能更新不及时，但响应更快）
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Model.Params.GetGroupMemberListParams">
+            <summary>
+             <para>获取群成员列表</para>
+             <para>响应内容为 JSON 数组，每个元素的内容和上面的 /get_group_member_info 接口相同，</para>
+             <para>但对于同一个群组的同一个成员，获取列表时和获取单独的成员信息时，某些字段可能有所不同，</para>
+             <para>例如 area、title 等字段在获取列表时无法获得，具体应以单独的成员信息为准。</para>
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.GetGroupMemberListParams.GroupId">
+            <summary>
+            群号
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Model.Params.GetGroupNoticeParams">
+            <summary>
+            获取群公告
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.GetGroupNoticeParams.GroupId">
+            <summary>
+            群号
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Model.Params.GetImageParams">
+            <summary>
+            获取图片
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.GetImageParams.File">
+            <summary>
+            收到的图片文件名（CQ 码的 file 参数），如 <see href="6B4DE3DFD1BD271E3297859D41C530F5.jpg"/>
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Model.Params.GetRecordParams">
+            <summary>
+            <para>获取语音</para>
+            <para>其实并不是真的获取语音，而是转换语音到指定的格式，然后返回语音文件名（data\record 目录下）。</para>
+            <para>注意，要使用此接口，需要安装 酷Q 的 <see href="https://cqp.cc/t/21132">语音组件</see>。</para>
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.GetRecordParams.File">
+            <summary>
+            收到的语音文件名（CQ 码的 file 参数），如 <see href="0B38145AA44505000B38145AA4450500.silk"/>
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.GetRecordParams.OutFormat">
+            <summary>
+            要转换到的格式，目前支持 mp3、amr、wma、m4a、spx、ogg、wav、flac
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.GetRecordParams.FullPath">
+            <summary>
+            是否返回文件的绝对路径（Windows 环境下建议使用，Docker 中不建议）
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Model.Params.GetStrangerInfoParams">
+            <summary>
+            获取陌生人信息
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.GetStrangerInfoParams.UserId">
+            <summary>
+            QQ 号
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.GetStrangerInfoParams.NoCache">
+            <summary>
+            是否不使用缓存（使用缓存可能更新不及时，但响应更快）
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Model.Params.GetVipInfoParams">
+            <summary>
+            获取会员信息
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.GetVipInfoParams.UserId">
+            <summary>
+            要查询的 QQ 号
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Model.Params.HandleQuickOperationParams">
+            <summary>
+            对事件执行快速操作
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.HandleQuickOperationParams.Context">
+            <summary>
+            事件上报的数据对象
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.HandleQuickOperationParams.Operation">
+            <summary>
+            快速操作对象，例如 {"ban": true, "reply": "请不要说脏话"}
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Model.Params.SendGroupNoticeParams">
+            <summary>
+            发布群公告
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SendGroupNoticeParams.GroupId">
+            <summary>
+            群号
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SendGroupNoticeParams.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SendGroupNoticeParams.content">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Model.Params.SetDiscussLeaveParams">
+            <summary>
+            发送讨论组消息
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetDiscussLeaveParams.DiscussId">
+            <summary>
+            讨论组 ID（正常情况下看不到，需要从讨论组消息上报的数据中获得）
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetDiscussLeaveParams.Message">
+            <summary>
+            讨论组 ID（正常情况下看不到，需要从讨论组消息上报的数据中获得）
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Model.Params.SetFriendAddRequestParams">
+            <summary>
+            处理加好友请求
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetFriendAddRequestParams.Flag">
+            <summary>
+            加好友请求的 flag（需从上报的数据中获得）
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetFriendAddRequestParams.Approve">
+            <summary>
+            是否同意请求
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetFriendAddRequestParams.Remark">
+            <summary>
+            添加后的好友备注（仅在同意时有效）
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupAddRequestParams">
+            <summary>
+            处理加群请求／邀请
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupAddRequestParams.Flag">
+            <summary>
+            加群请求的 flag（需从上报的数据中获得）
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupAddRequestParams.Type">
+            <summary>
+            add 或 invite，请求类型（需要和上报消息中的 sub_type 字段相符）
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupAddRequestParams.Approve">
+            <summary>
+            是否同意请求／邀请
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupAddRequestParams.Reason">
+            <summary>
+            拒绝理由（仅在拒绝时有效）
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupAdminParams">
+            <summary>
+            群组设置管理员
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupAdminParams.GroupId">
+            <summary>
+            群号
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupAdminParams.UserId">
+            <summary>
+            要设置管理员的 QQ 号
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupAdminParams.Enable">
+            <summary>
+            true 为设置，false 为取消
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupAnonymousBanParams">
+            <summary>
+             群组匿名用户禁言
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupAnonymousBanParams.GroupId">
+            <summary>
+            群号
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupAnonymousBanParams.Flag">
+            <summary>
+            要禁言的匿名用户的 flag（需从群消息上报的数据中获得）
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupAnonymousBanParams.Duration">
+            <summary>
+            禁言时长，单位秒，无法取消匿名用户禁言
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupAnonymousParams">
+            <summary>
+            群组匿名
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupAnonymousParams.GroupId">
+            <summary>
+            群号
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupAnonymousParams.Enable">
+            <summary>
+            是否允许匿名聊天
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupBanParams">
+            <summary>
+            群组单人禁言
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupBanParams.GroupId">
+            <summary>
+            群号
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupBanParams.UserId">
+            <summary>
+            要禁言的 QQ 号
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupBanParams.Duration">
+            <summary>
+            禁言时长，单位秒，0 表示取消禁言
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupCardParams">
+            <summary>
+            设置群名片（群备注）
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupCardParams.GroupId">
+            <summary>
+            群号
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupCardParams.UserId">
+            <summary>
+            	要设置的 QQ 号
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupCardParams.Card">
+            <summary>
+            群名片内容，不填或空字符串表示删除群名片
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupLeaveParams">
+            <summary>
+            退出群组
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupLeaveParams.GroupId">
+            <summary>
+            群号
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupLeaveParams.IsDismiss">
+            <summary>
+            是否解散，如果登录号是群主，则仅在此项为 true 时能够解散
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupSpecialTitleParams">
+            <summary>
+            设置群组专属头衔
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupSpecialTitleParams.GroupId">
+            <summary>
+            群号
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupSpecialTitleParams.UserId">
+            <summary>
+            要设置的 QQ 号
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupSpecialTitleParams.SpecialTitle">
+            <summary>
+            专属头衔，不填或空字符串表示删除专属头衔
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupSpecialTitleParams.Duration">
+            <summary>
+            专属头衔有效期，单位秒，-1 表示永久，不过此项似乎没有效果，可能是只有某些特殊的时间长度有效，有待测试
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupWholeBanParams">
+            <summary>
+            群组全员禁言
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupWholeBanParams.GroupId">
+            <summary>
+            群号
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetGroupWholeBanParams.Enable">
+            <summary>
+            是否禁言
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Model.Params.SetRestartParams">
+            <summary>
+            重启 酷Q，并以当前登录号自动登录（需勾选快速登录）
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetRestartParams.CleanLog">
+            <summary>
+            是否在重启时清空 酷Q 的日志数据库（log*.db）
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetRestartParams.CleanCache">
+            <summary>
+            是否在重启时清空 酷Q 的缓存数据库（cache.db）
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetRestartParams.CleanEvent">
+            <summary>
+            是否在重启时清空 酷Q 的事件数据库（eventv2.db）
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Model.Params.SetRestartPluginParams">
+            <summary>
+            重启 酷Q，并以当前登录号自动登录（需勾选快速登录）
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Params.SetRestartPluginParams.Delay">
+            <summary>
+            要延迟的毫秒数，如果默认情况下无法重启，可以尝试设置延迟为 2000 左右
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.QuickOperation.Reply">
+            <summary>
+            回复
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.QuickOperation.AtSender">
+            <summary>
+            @发送者
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.QuickOperation.Delete">
+            <summary>
+            群组撤回成员消息
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.QuickOperation.Kick">
+            <summary>
+            群组踢人
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.QuickOperation.Ban">
+            <summary>
+            群组禁言
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.QuickOperation.Approve">
+            <summary>
+            处理请求
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.QuickOperation.Remark">
+            <summary>
+            添加后的好友备注（仅在同意时有效）
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.QuickOperation.Reason">
+            <summary>
+            拒绝理由（仅在拒绝时有效）
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.Admin.UserId">
+            <summary>
+            QQ 号
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.Admin.NickName">
+            <summary>
+            QQ 昵称
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.Admin.Role">
+            <summary>
+            角色，owner 表示群主、admin 表示管理员
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.CqHttpStatus.AppInitialized">
+            <summary>
+            HTTP API 插件已初始化
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.CqHttpStatus.App_enabled">
+            <summary>
+            HTTP API 插件已启用
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.CqHttpStatus.PluginsGood">
+            <summary>
+            HTTP API 的各内部插件是否正常运行
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.CqHttpStatus.AppGood">
+            <summary>
+            HTTP API 插件正常运行（已初始化、已启用、各内部插件正常运行）
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.CqHttpStatus.Online">
+            <summary>
+            	当前 QQ 在线
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.CqHttpStatus.Good">
+            <summary>
+            	HTTP API 插件状态符合预期，意味着插件已初始化，内部插件都在正常运行，且 QQ 在线
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.CqHttpVersion.CoolqDirectory">
+            <summary>
+            酷 Q 根目录路径
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.CqHttpVersion.CoolqEdition">
+            <summary>
+            酷 Q 版本，air 或 pro
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.CqHttpVersion.PluginVersion">
+            <summary>
+            HTTP API 插件版本，例如 2.1.3
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.CqHttpVersion.PluginBuildNumber">
+            <summary>
+            HTTP API 插件 build 号
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.CqHttpVersion.PluginBuildConfiguration">
+            <summary>
+            HTTP API 插件编译配置，debug 或 release
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.Credentials.Cookies">
+            <summary>
+            Cookies
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.Credentials.CsrfToken">
+            <summary>
+            CSRF Token
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.FileInfo.FilePath">
+            <summary>
+            下载后的图片/转换后的语音文件路径
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.Friend.NickName">
+            <summary>
+            好友昵称
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.Friend.Remark">
+            <summary>
+            好友备注
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.Friend.UserId">
+            <summary>
+            好友 QQ 号
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.Friend.FriendGroupId">
+            <summary>
+            好友所在分组 ID
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.FriendGroup.FriendGroupId">
+            <summary>
+            好友分组 ID
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.FriendGroup.FriendGroupName">
+            <summary>
+            好友分组名称
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.FriendGroup.Friends">
+            <summary>
+            分组中的好友
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.Group.GroupId">
+            <summary>
+            群号
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.Group.GroupName">
+            <summary>
+            群名称
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.Group.CreatTimeStamp">
+            <summary>
+            创建时间戳
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.Group.CreatTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.Group.Category">
+            <summary>
+            群分类，具体这个 ID 对应的名称暂时没有
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.Group.MemberCount">
+            <summary>
+            成员数
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.Group.MaxMemberCount">
+            <summary>
+            最大成员数（群容量）
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.Group.Introduction">
+            <summary>
+            群介绍
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.Group.Admins">
+            <summary>
+            群主和管理员列表
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.Group.AdminCount">
+            <summary>
+            群主和管理员数
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.Group.MaxAdminCount">
+            <summary>
+            最大群主和管理员数
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.Group.OwnerId">
+            <summary>
+            群主 QQ 号
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.GroupMemberInfo.GroupId">
+            <summary>
+            群号
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.GroupMemberInfo.UserId">
+            <summary>
+            QQ 号
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.GroupMemberInfo.NickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.GroupMemberInfo.Card">
+            <summary>
+            群名片／备注
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.GroupMemberInfo.Sex">
+            <summary>
+            性别，male 或 female 或 unknown
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.GroupMemberInfo.Age">
+            <summary>
+            年龄
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.GroupMemberInfo.Area">
+            <summary>
+            地区
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.GroupMemberInfo.JoinTime">
+            <summary>
+            加群时间戳
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.GroupMemberInfo.LastSentTime">
+            <summary>
+            最后发言时间戳
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.GroupMemberInfo.Level">
+            <summary>
+            成员等级
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.GroupMemberInfo.Role">
+            <summary>
+            角色，owner 或 admin 或 member
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.GroupMemberInfo.Unfriendly">
+            <summary>
+            是否不良记录成员
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.GroupMemberInfo.Title">
+            <summary>
+            专属头衔
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.GroupMemberInfo.TitleExpireTime">
+            <summary>
+            专属头衔过期时间戳
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.GroupMemberInfo.CardChangeable">
+            <summary>
+            是否允许修改群名片
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.LoginInfo.UserId">
+            <summary>
+            QQ 号
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.LoginInfo.NickName">
+            <summary>
+            QQ 昵称
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.QQInfo.UserId">
+            <summary>
+            QQ 号
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.QQInfo.NickName">
+            <summary>
+            QQ 昵称
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.QQInfo.Sex">
+            <summary>
+            性别，male 或 female 或 unknown
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.QQInfo.Age">
+            <summary>
+            年龄
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.QQInfo.Level">
+            <summary>
+            QQ 等级
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.QQInfo.LevelSpeed">
+            <summary>
+            等级加速度
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.QQInfo.VipLevel">
+            <summary>
+            会员等级
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.QQInfo.VipGrowthSpeed">
+            <summary>
+            会员成长速度
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Response.QQInfo.VipGrowthTotal">
+            <summary>
+            会员成长总值
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Source.Context">
+            <summary>
+            <para>原始事件数据对象</para>
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Source.SelfId">
+            <summary>
+            <para>接收者</para>
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Source.ReceivedDate">
+            <summary>
+            <para>接收时间</para>
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Source.ConnectionData">
+            <summary>
+            <para>连接器数据</para>
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Source.Send">
+            <summary>
+            <para>发送</para>
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Source.UserId">
+            <summary>
+            <para>QQ 号</para>
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Source.GroupId">
+            <summary>
+            <para>群号</para>
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Source.DiscussId">
+            <summary>
+            <para>讨论组 ID</para>
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Model.Source.Flags">
+            <summary>
+            消息识别分类
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Params.DeleteMessageParams">
+            <summary>
+            撤回消息
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Params.DeleteMessageParams.MessageId">
+            <summary>
+            消息 ID
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Params.MessageParams">
+            <summary>
+            发送消息
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Params.MessageParams.MessageType">
+            <summary>
+            消息类型，支持 private、group、discuss，分别对应私聊、群组、讨论组，如不传入，则根据传入的 *_id 参数判断
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Params.MessageParams.UserId">
+            <summary>
+            对方 QQ 号（消息类型为 private 时需要）
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Params.MessageParams.GroupId">
+            <summary>
+            群号（消息类型为 group 时需要）
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Params.MessageParams.DiscussId">
+            <summary>
+            讨论组 ID（消息类型为 discuss 时需要）
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Params.MessageParams.Message">
+            <summary>
+            要发送的内容
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Params.MessageParams.MessageAutoEscape">
+            <summary>
+            消息内容是否作为纯文本发送（即不解析 CQ 码）
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Params.SendLikeParams">
+            <summary>
+            发送好友赞
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Params.SendLikeParams.UserId">
+            <summary>
+            对方 QQ 号
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Params.SendLikeParams.Times">
+            <summary>
+            赞的次数，每个好友每天最多 10 次
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Params.SetGroupKickParams">
+            <summary>
+            群组踢人
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Params.SetGroupKickParams.UserId">
+            <summary>
+            要踢的 QQ 号
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Params.SetGroupKickParams.GroupId">
+            <summary>
+            群号
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Params.SetGroupKickParams.RejectAddRequest">
+            <summary>
+            拒绝此人的加群请求
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.Resource.ActionResource.CQHTTPSubject">
+            <summary>
+            响应主题
+            </summary>
+        </member>
+        <member name="T:cqhttp.WebSocketReverse.NETCore.Resource.ResponseResource">
+            <summary>
+            CQHTTP 回调合集
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Resource.ResponseResource.Retcode">
+            <summary>
+            操作结果返回码
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Resource.ResponseResource.IsFailed">
+            <summary>
+            操作失败与否
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Resource.ResponseResource.IsInVaild">
+            <summary>
+            操作无效与否
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Resource.ResponseResource.MessageId">
+            <summary>
+            消息Id
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Resource.ResponseResource.FriendGroupList">
+            <summary>
+            好友列表
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Resource.ResponseResource.LoginInfo">
+            <summary>
+            登录号信息
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Resource.ResponseResource.QQInfo">
+            <summary>
+            陌生人信息,会员信息
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Resource.ResponseResource.GroupList">
+            <summary>
+            群列表
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Resource.ResponseResource.GroupMemberList">
+            <summary>
+            群成员,群成员列表
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Resource.ResponseResource.Credentials">
+            <summary>
+            QQ 相关接口凭证
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Resource.ResponseResource.File">
+            <summary>
+            图片语音文件信息
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Resource.ResponseResource.Status">
+            <summary>
+            插件运行状态
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Resource.ResponseResource.Version">
+            <summary>
+            酷 Q 及 HTTP API 插件的版本信息
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Resource.ResponseResource.CanSendImage">
+            <summary>
+            是否可以发送图片
+            </summary>
+        </member>
+        <member name="P:cqhttp.WebSocketReverse.NETCore.Resource.ResponseResource.CanSendRecord">
+            <summary>
+            是否可以发送语音
+            </summary>
+        </member>
+        <member name="M:cqhttp.WebSocketReverse.NETCore.AuthorizationEventArgs.Allow">
+            <summary>
+            设置通过连接
+            </summary>
+        </member>
+        <member name="F:cqhttp.WebSocketReverse.NETCore.WebSocketServer.isHardAuth">
+            <summary>
+            加强认证核对级别
+            </summary>
+        </member>
+        <member name="E:cqhttp.WebSocketReverse.NETCore.WebSocketServer.OnAuthorizationAsync">
+            <summary>
+            认证事件
+            </summary>
+        </member>
+        <member name="E:cqhttp.WebSocketReverse.NETCore.WebSocketServer.OnOpenConnectionAsync">
+            <summary>
+            打开连接事件
+            </summary>
+        </member>
+        <member name="E:cqhttp.WebSocketReverse.NETCore.WebSocketServer.OnCloseConnectionAsync">
+            <summary>
+            关闭连接事件
+            </summary>
+        </member>
+        <member name="E:cqhttp.WebSocketReverse.NETCore.WebSocketServer.OnReceiveMessageAsync">
+            <summary>
+            消息接收事件
+            </summary>
+        </member>
+        <member name="E:cqhttp.WebSocketReverse.NETCore.WebSocketServer.OnPongAsync">
+            <summary>
+            接触事件
+            </summary>
+        </member>
+        <member name="E:cqhttp.WebSocketReverse.NETCore.WebSocketServer.OnErrorAsync">
+            <summary>
+            发生異常事件
+            </summary>
+        </member>
+    </members>
+</doc>
